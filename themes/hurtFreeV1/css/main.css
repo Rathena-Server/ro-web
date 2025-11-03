@@ -233,3 +233,233 @@ a.has-hover-dark:hover, label.has-hover-dark:hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+/* ====================================
+   SMOOTH DROPDOWN ANIMATION
+   ==================================== */
+
+@media screen and (max-width: 1023px) {
+    /* Hide dropdowns by default on mobile */
+    .navbar-item.has-dropdown .navbar-dropdown {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Show dropdown when active */
+    .navbar-item.has-dropdown.is-active .navbar-dropdown {
+        max-height: 1000px;
+        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Rotate arrow icon when dropdown is open */
+    .navbar-item.has-dropdown .navbar-link::after {
+        transition: transform 0.3s ease;
+    }
+    
+    .navbar-item.has-dropdown.is-active .navbar-link::after {
+        transform: rotate(180deg);
+    }
+}
+
+
+/* ====================================
+   SITE-WIDE MOBILE RESPONSIVE FIXES
+   ==================================== */
+
+/* Footer social media - horizontal layout on mobile */
+#connected {
+    margin-bottom: 1rem !important;
+}
+
+.hero-foot .level {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+}
+
+.hero-foot .level-item {
+    margin: 0 0.75rem !important;
+    flex-shrink: 0 !important;
+}
+
+/* Reduce icon size on small screens */
+@media screen and (max-width: 768px) {
+    .hero-foot .icon.is-large i {
+        font-size: 2rem !important;
+    }
+    
+    .hero-foot .level-item {
+        margin: 0 0.5rem !important;
+    }
+    
+    #connected .heading {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* Footer text alignment */
+#footer {
+    padding: 2rem 0 1rem 0;
+    margin-top: 2rem;
+}
+
+#footer p {
+    font-size: 0.9rem;
+}
+
+/* Prevent element overlapping */
+.hero-body {
+    padding: 1.5rem !important;
+}
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Box content mobile fixes */
+.box {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        padding: 0.75rem !important;
+    }
+    
+    .hero-body {
+        padding: 1rem !important;
+    }
+    
+    /* Table responsiveness */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Form elements full width on mobile */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Button responsiveness */
+    .buttons {
+        flex-wrap: wrap;
+    }
+    
+    .button {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Column responsiveness */
+@media screen and (max-width: 1023px) {
+    .columns {
+        margin: 0 !important;
+    }
+    
+    .column {
+        padding: 0.5rem !important;
+    }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+}
+
+.section {
+    padding: 1.5rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        padding: 1rem !important;
+    }
+}
+
+/* Modal responsiveness */
+.modal-content {
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
+}
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95% !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* Card responsiveness */
+.card {
+    margin-bottom: 1rem;
+}
+
+.card-content {
+    padding: 1rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .card-content {
+        padding: 0.75rem !important;
+    }
+}
+
+/* Title and heading sizes on mobile */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 1.5rem !important;
+    }
+    
+    .subtitle {
+        font-size: 1rem !important;
+    }
+    
+    h1 { font-size: 1.75rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.25rem !important; }
+    h4 { font-size: 1.1rem !important; }
+}
+
+/* Image responsiveness */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Level component mobile fix */
+@media screen and (max-width: 768px) {
+    .level:not(.hero-foot .level) {
+        display: block !important;
+    }
+    
+    .level-item:not(.hero-foot .level-item) {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Notification responsiveness */
+.notification {
+    padding: 1rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .notification {
+        padding: 0.75rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+

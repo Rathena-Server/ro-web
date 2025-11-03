@@ -76,6 +76,8 @@
 <script type="text/javascript" src="<?php echo $this->themePath('js/extensions.js') ?>"></script>
 <script type="text/javascript" src="<?php echo $this->themePath('js/carousel.js') ?>"></script>
 <script type="text/javascript" src="<?php echo $this->themePath('js/init.js') ?>?v<?php echo time(); ?>"></script>
+<script type="text/javascript" src="<?php echo $this->themePath('js/mobile-menu.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->themePath('js/navbar.js') ?>"></script>
 <script type="text/javascript" src="<?php echo $this->themePath('js/flux.datefields.js') ?>"></script>
 <script type="text/javascript" src="<?php echo $this->themePath('js/flux.unitip.js') ?>"></script>
 
