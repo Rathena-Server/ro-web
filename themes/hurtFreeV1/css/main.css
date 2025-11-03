@@ -100,3 +100,136 @@ a.has-hover-dark:hover, label.has-hover-dark:hover {
 		border-bottom: 0;
 	}
 }
+/* ====================================
+   IMPROVED MOBILE BURGER MENU STYLES
+   ==================================== */
+
+/* Navbar dark background for better contrast */
+.navbar.is-dark {
+    background-color: #1a1a2e !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Burger menu improvements */
+.navbar-burger {
+    color: #ffd700 !important;
+    height: 3.5rem;
+}
+
+.navbar-burger:hover {
+    background-color: rgba(255,215,0,0.1) !important;
+}
+
+/* Mobile menu container */
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        background-color: #16213e !important;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        padding: 0.5rem 0;
+    }
+    
+    /* Dropdown menu items */
+    .navbar-item.has-dropdown {
+        background-color: transparent !important;
+    }
+    
+    /* Menu category headers */
+    .navbar-item .navbar-link {
+        color: #ffd700 !important;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.75rem 1rem;
+        background-color: rgba(255,215,0,0.1) !important;
+        border-left: 3px solid #ffd700;
+        margin: 0.25rem 0.5rem;
+        border-radius: 4px;
+    }
+    
+    .navbar-item .navbar-link:hover {
+        background-color: rgba(255,215,0,0.2) !important;
+    }
+    
+    /* Dropdown items */
+    .navbar-dropdown {
+        background-color: #0f172a !important;
+        border: none !important;
+        padding: 0.25rem 0;
+        margin-left: 1rem;
+        box-shadow: none !important;
+    }
+    
+    .navbar-dropdown .navbar-item {
+        color: #e0e0e0 !important;
+        padding: 0.6rem 1.5rem !important;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        border-left: 2px solid transparent;
+    }
+    
+    .navbar-dropdown .navbar-item:hover {
+        background-color: rgba(255,215,0,0.15) !important;
+        color: #ffd700 !important;
+        border-left-color: #ffd700;
+        padding-left: 1.75rem !important;
+    }
+    
+    /* Compact spacing */
+    .navbar-item.has-dropdown .navbar-dropdown {
+        display: none;
+        padding-bottom: 0.5rem;
+    }
+    
+    .navbar-item.has-dropdown.is-active .navbar-dropdown {
+        display: block;
+    }
+    
+    /* Buttons in mobile menu */
+    .navbar-item .buttons {
+        margin: 0.5rem 1rem;
+    }
+    
+    .navbar-item .button {
+        width: 100%;
+        font-weight: 600;
+        padding: 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .button.is-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        border: none;
+    }
+    
+    .button.is-danger {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+        border: none;
+    }
+}
+
+/* Desktop menu improvements */
+@media screen and (min-width: 1024px) {
+    .navbar-dropdown .navbar-item {
+        color: #2c3e50 !important;
+        transition: all 0.2s ease;
+    }
+    
+    .navbar-dropdown .navbar-item:hover {
+        background-color: #ffd700 !important;
+        color: #1a1a2e !important;
+    }
+    
+    .navbar-link {
+        color: #ffd700 !important;
+    }
+}
+
+/* Remove black text override */
+.has-text-black {
+    color: inherit !important;
+}
+
+/* Smooth transitions */
+.navbar-menu, .navbar-dropdown, .navbar-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
