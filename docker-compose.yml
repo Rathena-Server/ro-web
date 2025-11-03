@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  fluxcp:
+    build: .
+    container_name: fluxcp_web
+    ports:
+      - "8080:80"  # FluxCP web interface - NO CONFLICT
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - docker_default
+    environment:
+      - TZ=UTC
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+    restart: unless-stopped
+
+networks:
+  docker_default:
+    external: true

@@ -1,30 +1,16 @@
-# Images
-/data/items/icons/*.png
-/data/items/images/*.png
+# FluxCP data and cache
+data/tmp/*
+data/logs/*
+!data/tmp/index.html
+!data/logs/index.html
 
-/data/jobs/images/F/*.gif
-/data/jobs/images/M/*.gif
+# Configuration backups
+config/*.bak
+config/*.bak2
 
-/data/monsters/*.png
-/data/monsters/*.gif
+# Docker volumes
+.env
 
-# Logs
-/data/logs/errors
-/data/logs/mail
-/data/logs/mysql
-/data/logs/schemas
-/data/logs/transactions
-
-# Caches
-/data/tmp/*.php
-/data/tmp/*.cache
-/data/tmp/emblems
-
-# Non-Default Themes
-/themes/*
-!/themes/default
-!/themes/bootstrap
-!/themes/installer
-
-# Import Configs
-/config/import
+# IDE
+.vscode/
+.idea/
