@@ -50,13 +50,44 @@
 			</div>
 		</div>
 	<?php endif ?>
-<nav id="footer">
-<div class="container">
-<p class="has-text-centered">
-<?php echo $hurtsky['footerCopyrightInitialDate']; ?> <?php echo $hurtsky['yourServerName']; ?> All rights reserved.
-</p>
-</div>
-</nav>
+	<nav id="footer">
+		<div class="container">
+			<p class="has-text-centered">
+				<?php if (Flux::config('ShowCopyright')) : ?>
+					Powered by <a class="has-text-warning" href="https://github.com/rathena/FluxCP" target="_blank">FluxCP</a>
+				<?php endif ?>
+				<?php if (Flux::config('ShowRenderDetails')) : ?>
+
+					Page generated in <strong class="has-text-warning"><?php echo round(microtime(true) - __START__, 5) ?></strong> second(s).
+					Number of queries executed: <strong class="has-text-warning"><?php echo (int) Flux::$numberOfQueries ?></strong>.
+					<?php if (Flux::config('GzipCompressOutput')) : ?>Gzip Compression: <strong class="has-text-warning">Enabled</strong>.<?php endif ?>
+
+				<?php endif ?>
+				<?php if (count(Flux::$appConfig->get('ThemeName', false)) > 1) : ?>
+
+					<span>Theme:
+						<select name="preferred_theme" onchange="updatePreferredTheme(this)">
+							<?php foreach (Flux::$appConfig->get('ThemeName', false) as $themeName) : ?>
+								<option value="<?php echo htmlspecialchars($themeName) ?>" <?php if ($session->theme == $themeName) echo ' selected="selected"' ?>><?php echo htmlspecialchars($themeName) ?></option>
+							<?php endforeach ?>
+						</select>
+					</span>
+				<?php endif ?>
+				<form action="<?php echo $this->urlWithQs ?>" method="post" name="preferred_theme_form" style="display: none">
+					<input type="hidden" name="preferred_theme" value="" />
+				</form>
+
+			</p>
+			<p class="has-text-centered">
+				<?php echo $hurtsky['footerCopyrightTrademarkLable']; ?>
+			</p>
+			<p class="has-text-centered">
+				<?php echo $hurtsky['footerCopyrightInitialDate']; ?> - <?php echo date("Y"); ?> <?php echo $hurtsky['yourServerName']; ?> All rights reserved.
+			</p>
+		</div>
+	</nav>
+	<nav class="level">
+		<div class="level-left">
 		</div>
 		<div class="level-right">
 			<div class="level-item">
