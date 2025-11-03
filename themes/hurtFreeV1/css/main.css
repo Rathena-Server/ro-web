@@ -1,0 +1,102 @@
+* {
+	font-family: 'Yantramanav', sans-serif;
+}
+
+body {
+	background: url("../img/back.jpg");
+	background-color: black;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+.hero-body {
+	background: url("../img/back.jpg");
+	background-color: black;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+#footer {
+	padding: 20px;
+}
+
+#connected {
+	padding-top: 20px;
+}
+
+.is-semi-transparent {
+	background:rgba(255,255,255,0.8);
+}
+
+.is-semi-dark-transparent {
+	background:rgba(0, 0, 0,0.7);
+}
+
+a.has-hover-dark:hover, label.has-hover-dark:hover {
+	background-color: #363636;
+}
+
+.hero.is-dark .navbar-link.is-active, .hero.is-dark .navbar-link:hover, .hero.is-dark a.navbar-item.is-active, .hero.is-dark a.navbar-item:hover {
+    background-color: rgb(215, 218, 250);
+    color: rgba(26, 24, 24, 0);
+}
+
+.hero.is-dark .tabs.is-boxed a, .hero.is-dark .tabs.is-toggle a {
+    color: #0a0a0a;
+}
+
+.bm--card-equal-height {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+.bm--card-equal-height .card-footer {
+   margin-top: auto;
+}
+
+@media screen and (max-width: 700px) {
+	.is-responsive {
+		border: 0;
+	}
+
+	.is-responsive caption {
+		font-size: 1.3em;
+	}
+  
+	.is-responsive thead {
+		border: none;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+  
+	.is-responsive tr {
+		border-bottom: 3px solid #ddd;
+		display: block;
+		margin-bottom: .625em;
+	}
+  
+	.is-responsive td {
+		border-bottom: 1px solid #ddd;
+		display: block;
+		text-align: right;
+		width: 250px;
+	}
+  
+	.is-responsive td::before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+  
+	.is-responsive td:last-child {
+		border-bottom: 0;
+	}
+}
