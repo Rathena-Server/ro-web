@@ -55,7 +55,7 @@ if (!defined('FLUX_ROOT')) exit;
 									<?php
 													$titleRSS = $rssItem->title;
 													$titleRSS = explode(" ", $titleRSS);
-													$titleRSS = array_slice($titleRSS, 0, $hurtsky["newsTitleLimit"]);
+													$titleRSS = array_slice($titleRSS, 0, $themeSettings["newsTitleLimit"]);
 													$titleRSS = implode(" ", $titleRSS);
 													echo $titleRSS;
 													?>
@@ -68,7 +68,7 @@ if (!defined('FLUX_ROOT')) exit;
 											<?php
 															$desc = $rssItem->description;
 															$desc = explode(" ", $desc);
-															$desc = array_slice($desc, 0, $hurtsky["newsContentLimit"]);
+															$desc = array_slice($desc, 0, $themeSettings["newsContentLimit"]);
 															$desc = implode(" ", $desc);
 															echo $desc;
 															?>

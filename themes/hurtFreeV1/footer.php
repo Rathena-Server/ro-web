@@ -10,7 +10,7 @@
 </div>
 <!--hero-body-->
 <div class="hero-foot">
-	<?php if ($hurtsky['enableSocialNetworkLink']) : ?>
+	<?php if ($themeSettings['enableSocialNetworkLink']) : ?>
 		<div class="container">
 			<div class="columns is-centered">
 				<div class="column"></div>
@@ -21,25 +21,25 @@
 						</div>
 					</nav>
 					<nav class="level">
-						<?php if ($hurtsky['enableFacebookIcon']) : ?>
+						<?php if ($themeSettings['enableFacebookIcon']) : ?>
 							<div class="level-item">
-								<a class="icon is-large has-text-warning" href="<?php echo $hurtsky['facebookLink']; ?>" target="_blank">
+								<a class="icon is-large has-text-warning" href="<?php echo $themeSettings['facebookLink']; ?>" target="_blank">
 									<i class="fab fa-facebook-square fa-3x"></i>
 								</a>
 							</div>
 						<?php endif ?>
 
-						<?php if ($hurtsky['enableDiscordIcon']) : ?>
+						<?php if ($themeSettings['enableDiscordIcon']) : ?>
 							<div class="level-item">
-								<a class="icon is-large has-text-warning" href="<?php echo $hurtsky['discordInviteLink']; ?>" target="_blank">
+								<a class="icon is-large has-text-warning" href="<?php echo $themeSettings['discordInviteLink']; ?>" target="_blank">
 									<i class="fab fa-discord fa-3x"></i>
 								</a>
 							</div>
 						<?php endif ?>
 
-						<?php if ($hurtsky['enableTwitterIcon']) : ?>
+						<?php if ($themeSettings['enableTwitterIcon']) : ?>
 							<div class="level-item">
-								<a class="icon is-large has-text-warning" href="<?php echo $hurtsky['twitterLink']; ?>" target="_blank">
+								<a class="icon is-large has-text-warning" href="<?php echo $themeSettings['twitterLink']; ?>" target="_blank">
 									<i class="fab fa-twitter-square fa-3x"></i>
 								</a>
 							</div>
@@ -53,22 +53,11 @@
 <nav id="footer">
 <div class="container">
 <p class="has-text-centered">
-<?php echo $hurtsky['footerCopyrightInitialDate']; ?> <?php echo $hurtsky['yourServerName']; ?> All rights reserved.
+<?php echo $themeSettings['footerCopyrightInitialDate']; ?> <?php echo $themeSettings['yourServerName']; ?> All rights reserved.
 </p>
 </div>
 </nav>
 		</div>
-		<div class="level-right">
-			<div class="level-item">
-				<span class="tag is-dark">
-					<a class="has-text-white" href="https://github.com/hurtsky" target="_blank">Beautified by Hurtsky</a>
-					<span class="icon is-dark">
-						<img src="https://avatars3.githubusercontent.com/u/4039059?s=460&v=4">
-					</span>
-				</span>
-			</div>
-		</div>
-	</nav>
 </div>
 </section>
 

@@ -12,7 +12,7 @@ $menuItems = $this->getMenuItems();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
-	<meta name="author" content="hurtsky">
+	<meta name="author" content="dekzblaster">
 	<?php if (isset($metaRefresh)) : ?>
 		<meta http-equiv="refresh" content="<?php echo $metaRefresh['seconds'] ?>; URL=<?php echo $metaRefresh['location'] ?>" />
 	<?php endif ?>

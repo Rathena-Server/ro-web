@@ -8,9 +8,9 @@ return array(
 	'inherit'     => 'default',
 
 	// This data is not displayed anywhere.
-	'author'      => 'hurtsky',
+	'author'      => 'dekzblaster',
 	'version'     => '1.0.5',
 	'description' => 'Bulma.io Css Theme for FluxCP',
-	'website'     => 'https://github.com/hurtsky'
+	'website'     => 'https://github.com/dekzblaster'
 );
 ?>

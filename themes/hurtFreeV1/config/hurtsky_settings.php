@@ -1,6 +1,6 @@
 <?php
 
-$hurtsky = array(
+$themeSettings = array(
 'yourServerName'                => 'Ragnarok QC',
 'newsTitleLimit'                => 10,
 'newsContentLimit'              => 100,
