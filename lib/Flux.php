@@ -974,7 +974,7 @@ class Flux {
 	public static function elementName($ele)
 	{
 		$element = Flux::config("Elements")->toArray();
-		return is_null($element[$ele]) ? $element['Neutral'] : $element[$ele];
+		return (isset($element[$ele]) && $element[$ele] !== null) ? $element[$ele] : $element['Neutral'];
 	}
 
 	/**
@@ -983,7 +983,7 @@ class Flux {
 	public static function monsterRaceName($race)
 	{
 		$races = Flux::config("MonsterRaces")->toArray();
-		return is_null($races[$race]) ? $races['Formless'] : $races[$race];
+		return (isset($races[$race]) && $races[$race] !== null) ? $races[$race] : $races['Formless'];
 	}
 
 	/**

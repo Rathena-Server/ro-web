@@ -11,53 +11,42 @@
 <!--hero-body-->
 <div class="hero-foot">
 	<?php if ($themeSettings['enableSocialNetworkLink']) : ?>
-		<div class="container">
-			<div class="columns is-centered">
-				<div class="column"></div>
-				<div class="column">
-					<nav id="connected" class="level">
-						<div class="level-item">
-							<p class="heading">GET CONNECTED WITH US</p>
-						</div>
-					</nav>
-					<nav class="level">
+		<div class="footer-social">
+			<div class="container">
+				<div class="has-text-centered">
+					<p class="social-heading">Connect With Us</p>
+					<div class="social-icons">
 						<?php if ($themeSettings['enableFacebookIcon']) : ?>
-							<div class="level-item">
-								<a class="icon is-large has-text-warning" href="<?php echo $themeSettings['facebookLink']; ?>" target="_blank">
-									<i class="fab fa-facebook-square fa-3x"></i>
-								</a>
-							</div>
+							<a class="social-icon facebook-icon" href="<?php echo $themeSettings['facebookLink']; ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+								<i class="fab fa-facebook-square"></i>
+							</a>
 						<?php endif ?>
 
 						<?php if ($themeSettings['enableDiscordIcon']) : ?>
-							<div class="level-item">
-								<a class="icon is-large has-text-warning" href="<?php echo $themeSettings['discordInviteLink']; ?>" target="_blank">
-									<i class="fab fa-discord fa-3x"></i>
-								</a>
-							</div>
+							<a class="social-icon discord-icon" href="<?php echo $themeSettings['discordInviteLink']; ?>" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+								<i class="fab fa-discord"></i>
+							</a>
 						<?php endif ?>
 
 						<?php if ($themeSettings['enableTwitterIcon']) : ?>
-							<div class="level-item">
-								<a class="icon is-large has-text-warning" href="<?php echo $themeSettings['twitterLink']; ?>" target="_blank">
-									<i class="fab fa-twitter-square fa-3x"></i>
-								</a>
-							</div>
+							<a class="social-icon twitter-icon" href="<?php echo $themeSettings['twitterLink']; ?>" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+								<i class="fab fa-twitter-square"></i>
+							</a>
 						<?php endif ?>
-					</nav>
+					</div>
 				</div>
-				<div class="column"></div>
 			</div>
 		</div>
 	<?php endif ?>
-<nav id="footer">
-<div class="container">
-<p class="has-text-centered">
-<?php echo $themeSettings['footerCopyrightInitialDate']; ?> <?php echo $themeSettings['yourServerName']; ?> All rights reserved.
-</p>
-</div>
-</nav>
+	
+	<footer class="footer-copyright">
+		<div class="container">
+			<p class="has-text-centered">
+				&copy; <?php echo $themeSettings['footerCopyrightInitialDate']; ?> <?php echo htmlspecialchars($themeSettings['yourServerName']); ?>. All rights reserved.
+			</p>
 		</div>
+	</footer>
+</div>
 </div>
 </section>
 

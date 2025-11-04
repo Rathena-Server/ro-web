@@ -5,10 +5,10 @@
 	<?php echo $this->moduleActionFormInputs($params->get('module')) ?>
 	<p>
 		<label for="item_id">Item ID:</label>
-		<input type="text" name="item_id" id="item_id" value="<?php echo htmlspecialchars($params->get('item_id')) ?>" />
+		<input type="text" name="item_id" id="item_id" value="<?php echo htmlspecialchars($params->get('item_id') ?: '') ?>" />
 		...
 		<label for="name">Name:</label>
-		<input type="text" name="name" id="name" value="<?php echo htmlspecialchars($params->get('name')) ?>" />
+		<input type="text" name="name" id="name" value="<?php echo htmlspecialchars($params->get('name') ?: '') ?>" />
 		...
 		<label for="type">Type:</label>
 		<select name="type">
@@ -19,11 +19,11 @@
 				<option value="<?php echo $typeId ?>"<?php if (($type=$params->get('type')) === strval($typeId)) echo ' selected="selected"' ?>>
 					<?php echo htmlspecialchars($typeName) ?>
 				</option>
-				<?php $itemTypes2 = Flux::config('ItemTypes2')->toArray() ?>
-				<?php if (array_key_exists($typeId, $itemTypes2)): ?>
-					<?php foreach ($itemTypes2[$typeId] as $typeId2 => $typeName2): ?>
-					<option value="<?php echo $typeId ?>-<?php echo $typeId2 ?>"<?php if (($type=$params->get('type')) === ($typeId . '-' . $typeId2)) echo ' selected="selected"' ?>>
-						<?php echo htmlspecialchars($typeName . ' - ' . $typeName2) ?>
+				<?php $itemSubTypes = Flux::config('ItemSubTypes')->toArray() ?>
+				<?php if (array_key_exists($typeId, $itemSubTypes)): ?>
+					<?php foreach ($itemSubTypes[$typeId] as $subtypeId => $subtypeName): ?>
+					<option value="<?php echo $typeId ?>-<?php echo $subtypeId ?>"<?php if (($type=$params->get('type')) === ($typeId . '-' . $subtypeId)) echo ' selected="selected"' ?>>
+						<?php echo htmlspecialchars($typeName . ' - ' . $subtypeName) ?>
 					</option>
 					<?php endforeach ?>
 				<?php endif ?>
@@ -49,7 +49,7 @@
 			<option value="gt"<?php if ($npc_buy_op == 'gt') echo ' selected="selected"' ?>>is greater than</option>
 			<option value="lt"<?php if ($npc_buy_op == 'lt') echo ' selected="selected"' ?>>is less than</option>
 		</select>
-		<input type="text" name="npc_buy" id="npc_buy" value="<?php echo htmlspecialchars($params->get('npc_buy')) ?>" />
+		<input type="text" name="npc_buy" id="npc_buy" value="<?php echo htmlspecialchars($params->get('npc_buy') ?: '') ?>" />
 		...
 		<label for="npc_sell">NPC Sell:</label>
 		<select name="npc_sell_op">
@@ -57,7 +57,7 @@
 			<option value="gt"<?php if ($npc_sell_op == 'gt') echo ' selected="selected"' ?>>is greater than</option>
 			<option value="lt"<?php if ($npc_sell_op == 'lt') echo ' selected="selected"' ?>>is less than</option>
 		</select>
-		<input type="text" name="npc_sell" id="npc_sell" value="<?php echo htmlspecialchars($params->get('npc_sell')) ?>" />
+		<input type="text" name="npc_sell" id="npc_sell" value="<?php echo htmlspecialchars($params->get('npc_sell') ?: '') ?>" />
 		...
 		<label for="weight">Weight:</label>
 		<select name="weight_op">
@@ -65,7 +65,7 @@
 			<option value="gt"<?php if ($weight_op == 'gt') echo ' selected="selected"' ?>>is greater than</option>
 			<option value="lt"<?php if ($weight_op == 'lt') echo ' selected="selected"' ?>>is less than</option>
 		</select>
-		<input type="text" name="weight" id="weight" value="<?php echo htmlspecialchars($params->get('weight')) ?>" />
+		<input type="text" name="weight" id="weight" value="<?php echo htmlspecialchars($params->get('weight') ?: '') ?>" />
 	</p>
 	<p>
 		<label for="range">Range:</label>
@@ -74,7 +74,7 @@
 			<option value="gt"<?php if ($range_op == 'gt') echo ' selected="selected"' ?>>is greater than</option>
 			<option value="lt"<?php if ($range_op == 'lt') echo ' selected="selected"' ?>>is less than</option>
 		</select>
-		<input type="text" name="range" id="range" value="<?php echo htmlspecialchars($params->get('range')) ?>" />
+		<input type="text" name="range" id="range" value="<?php echo htmlspecialchars($params->get('range') ?: '') ?>" />
 		...
 		<label for="slots">Slots:</label>
 		<select name="slots_op">
@@ -82,7 +82,7 @@
 			<option value="gt"<?php if ($slots_op == 'gt') echo ' selected="selected"' ?>>is greater than</option>
 			<option value="lt"<?php if ($slots_op == 'lt') echo ' selected="selected"' ?>>is less than</option>
 		</select>
-		<input type="text" name="slots" id="slots" value="<?php echo htmlspecialchars($params->get('slots')) ?>" />
+		<input type="text" name="slots" id="slots" value="<?php echo htmlspecialchars($params->get('slots') ?: '') ?>" />
 		...
 		<label for="defense">Defense:</label>
 		<select name="defense_op">
@@ -90,7 +90,7 @@
 			<option value="gt"<?php if ($defense_op == 'gt') echo ' selected="selected"' ?>>is greater than</option>
 			<option value="lt"<?php if ($defense_op == 'lt') echo ' selected="selected"' ?>>is less than</option>
 		</select>
-		<input type="text" name="defense" id="defense" value="<?php echo htmlspecialchars($params->get('defense')) ?>" />
+		<input type="text" name="defense" id="defense" value="<?php echo htmlspecialchars($params->get('defense') ?: '') ?>" />
 	</p>
 	<p>
 		<label for="attack">Attack:</label>
@@ -99,7 +99,7 @@
 			<option value="gt"<?php if ($attack_op == 'gt') echo ' selected="selected"' ?>>is greater than</option>
 			<option value="lt"<?php if ($attack_op == 'lt') echo ' selected="selected"' ?>>is less than</option>
 		</select>
-		<input type="text" name="attack" id="attack" value="<?php echo htmlspecialchars($params->get('attack')) ?>" />
+		<input type="text" name="attack" id="attack" value="<?php echo htmlspecialchars($params->get('attack') ?: '') ?>" />
 		...
 		<?php if($server->isRenewal): ?>
 		<label for="matk">MATK:</label>
@@ -108,7 +108,7 @@
 			<option value="gt"<?php if ($matk_op == 'gt') echo ' selected="selected"' ?>>is greater than</option>
 			<option value="lt"<?php if ($matk_op == 'lt') echo ' selected="selected"' ?>>is less than</option>
 		</select>
-		<input type="text" name="matk" id="matk" value="<?php echo htmlspecialchars($params->get('matk')) ?>" />
+		<input type="text" name="matk" id="matk" value="<?php echo htmlspecialchars($params->get('matk') ?: '') ?>" />
 		...
 		<?php endif ?>
 		<label for="refineable">Refineable:</label>
@@ -137,12 +137,15 @@
 	</p>
 </form>
 <?php if ($items): ?>
-<?php echo $paginator->infoText() ?>
+<div class="pagination-container">
+	<?php echo $paginator->infoText() ?>
+</div>
+<div class="table-container">
 <table class="table is-responsive">
 	<thead>
 		<tr>
 			<th scope="col"><?php echo $paginator->sortableColumn('item_id', 'Item ID') ?></th>
-			<th scope="col"><?php echo $paginator->sortableColumn('name', 'Name') ?></th>
+			<th scope="col" colspan="2"><?php echo $paginator->sortableColumn('name', 'Name') ?></th>
 			<th scope="col">Type</th>
 			<th scope="col">Equip Locations</th>
 			<th scope="col"><?php echo $paginator->sortableColumn('price_buy', 'NPC Buy') ?></th>
@@ -170,13 +173,13 @@
 					<?php echo htmlspecialchars($item->item_id) ?>
 				<?php endif ?>
 			</td>
-			<?php if ($icon=$this->iconImage($item->item_id)): ?>
-				<td data-label="Name"><img src="<?php echo htmlspecialchars($icon) ?>?nocache=<?php echo rand() ?>" /></td>
-				<td data-label="Icon"><?php echo htmlspecialchars($item->name) ?></td>
-			<?php else: ?>
-				<td data-label="Name"><?php echo htmlspecialchars($item->name) ?></td>
-			<?php endif ?>
-			<td data-label="Type">
+		<?php if ($icon=$this->iconImage($item->item_id)): ?>
+			<td data-label="Image"><img src="<?php echo htmlspecialchars($icon) ?>?nocache=<?php echo rand() ?>" /></td>
+			<td data-label="Name"><?php echo htmlspecialchars($item->name) ?></td>
+		<?php else: ?>
+			<td colspan="2" data-label="Name"><?php echo htmlspecialchars($item->name) ?></td>
+		<?php endif ?>
+		<td data-label="Type">
 				<?php if ($type=$this->itemTypeText($item->type, $item->view)): ?>
 					<?php echo htmlspecialchars($type) ?>
 				<?php else: ?>
@@ -184,10 +187,10 @@
 				<?php endif ?>
 			</td>
 			<td data-label="Equip Locations">
-				<?php if ($loc=$this->equipLocationCombinationText($item->equip_locations)): ?>
-					<?php echo htmlspecialchars($loc) ?>
+				<?php if ($equip_locations=$this->equipLocations($item->equip_location)): ?>
+					<?php echo $equip_locations ?>
 				<?php else: ?>
-					<span class="not-applicable">Unknown<?php echo " (".$item->equip_locations.")" ?></span>
+					<span class="not-applicable">None</span>
 				<?php endif ?>
 			</td>
 			<td data-label="NPC Buy"><?php echo number_format((int)$item->price_buy) ?></td>
@@ -225,7 +228,10 @@
 	<?php endforeach ?>
 	</tbody>
 </table>
-<?php echo $paginator->getHTML() ?>
+</div>
+<div class="pagination-container">
+	<?php echo $paginator->getHTML() ?>
+</div>
 <?php else: ?>
 <p>No items found. <a href="javascript:history.go(-1)">Go back</a>.</p>
 <?php endif ?>
